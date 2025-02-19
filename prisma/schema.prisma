@@ -30,11 +30,11 @@ model Restaurant {
 model MenuCategory {
   id           String     @id @default(uuid())
   name         String
-  restaurant   Restaurant @relation(fields: [restaurantId], references: [id])
+  restaurant   Restaurant @relation(fields: [restaurantId], references: [id], onDelete: Cascade)
   restaurantId String
   products     Product[]
-  CreatedAt    DateTime   @default(now())
-  UpdatedAt    DateTime   @updatedAt
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
 }
 
 model Product {
@@ -45,12 +45,12 @@ model Product {
   imageUrl       String
   ingredients    String[]
   orderProducts  OrderProduct[]
-  restaurant     Restaurant     @relation(fields: [restaurantId], references: [id])
+  restaurant     Restaurant     @relation(fields: [restaurantId], references: [id], onDelete: Cascade)
   restaurantId   String
-  menuCategory   MenuCategory   @relation(fields: [MenuCategoryId], references: [id])
-  MenuCategoryId String
-  CreatedAt      DateTime       @default(now())
-  UpdatedAt      DateTime       @updatedAt
+  menuCategory   MenuCategory   @relation(fields: [menuCategoryId], references: [id], onDelete: Cascade)
+  menuCategoryId String
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
 }
 
 model Order {
@@ -58,8 +58,8 @@ model Order {
   total             Float
   status            OrderStatus
   consumptionMethod ConsumptionMethod
-  restaurant        Restaurant        @relation(fields: [restarauntId], references: [id])
-  restarauntId      String
+  restaurant        Restaurant        @relation(fields: [restaurantId], references: [id], onDelete: Cascade)
+  restaurantId      String
   orderProducts     OrderProduct[]
   createdAt         DateTime          @default(now())
   updatedAt         DateTime          @updatedAt
@@ -67,9 +67,9 @@ model Order {
 
 model OrderProduct {
   id        String   @id @default(uuid())
-  product   Product  @relation(fields: [productId], references: [id])
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
   productId String
-  oder      Order    @relation(fields: [orderId], references: [id])
+  order     Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
   orderId   Int
   quantity  Int
   price     Float
@@ -80,7 +80,7 @@ model OrderProduct {
 enum OrderStatus {
   PENDING
   IN_PREPARATION
-  FISNISHED
+  FINISHED
 }
 
 enum ConsumptionMethod {
