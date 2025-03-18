@@ -41,9 +41,9 @@ body {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground h-full;
+    @apply h-full bg-background text-foreground;
   }
-  html{
+  html {
     @apply h-full;
   }
 }
