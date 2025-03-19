@@ -3,7 +3,7 @@
 import { Product } from "@prisma/client";
 import { createContext, ReactNode, useState } from "react";
 
-interface CartProduct extends Pick<Product, 'id' | 'imageUrl' | 'name' | 'price'> {
+export interface CartProduct extends Pick<Product, 'id' | 'imageUrl' | 'name' | 'price'> {
   quantity: number;
 }
 
