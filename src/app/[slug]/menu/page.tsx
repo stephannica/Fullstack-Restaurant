@@ -10,7 +10,7 @@ interface RestaurantMenuPageProps {
   searchParams: Promise<{ consumptionMethod: string }>;
 }
 
-const isComnsumptionMethodValid = (consumptionMethod: string) => {
+const isConsumptionMethodValid = (consumptionMethod: string) => {
   return ["DINE_IN", "TAKEAWAY"].includes(consumptionMethod.toUpperCase());
 };
 
@@ -20,7 +20,7 @@ const RestaurantMenuPage = async ({
 }: RestaurantMenuPageProps) => {
   const { slug } = await params;
   const { consumptionMethod } = await searchParams;
-  if (!isComnsumptionMethodValid(consumptionMethod)) {
+  if (!isConsumptionMethodValid(consumptionMethod)) {
     return notFound();
   }
   const restaurant = await db.restaurant.findUnique({

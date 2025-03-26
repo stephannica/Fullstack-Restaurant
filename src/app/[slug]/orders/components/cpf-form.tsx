@@ -50,7 +50,7 @@ const CpfForm = () => {
   const router = useRouter();
   const pathname = usePathname();
   const onSubmit = (data: FormSchema) => {
-    router.push(`${pathname}?cpf=${removeCpfPunctuation(data.cpf)}`);
+    router.replace(`${pathname}?cpf=${removeCpfPunctuation(data.cpf)}`);
   };
   const handleCancel = () => {
     router.back();
@@ -61,7 +61,9 @@ const CpfForm = () => {
       <DrawerContent>
         <DrawerHeader>
           <DrawerTitle>Visualizar Pedidos</DrawerTitle>
-          <DrawerDescription>Insira seu CPF abaixo para visualizar seus pedidos.</DrawerDescription>
+          <DrawerDescription>
+            Insira seu CPF abaixo para visualizar seus pedidos.
+          </DrawerDescription>
         </DrawerHeader>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
