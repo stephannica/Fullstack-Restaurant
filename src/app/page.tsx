@@ -8,7 +8,7 @@ const HomePage = () => {
           Olá, caso você tenha vindo para este link, para acessar o restaurante,
           digite na URL <span className="font-bold">/fsw-donalds</span>.
         </h1>
-        <h2 className="text-lg font-semibold">Ou clique aqui ↓</h2>
+        <h2 className="text-lg font-semibold">ou clique aqui ↓</h2>
         <div>
             <Link
             href="https://fullstack-restaurant-two.vercel.app/fsw-donalds"
