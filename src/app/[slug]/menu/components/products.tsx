@@ -33,12 +33,12 @@ const Products = ({ products }: ProductsProps) => {
           </div>
 
           {/* DIREITA */}
-          <div className="relative min-h-[82px] min-w-[120px]">
+          <div className="relative min-h-[82px] min-w-[90px] rounded-lg">
             <Image
               src={product.imageUrl}
               alt={product.name}
               fill
-              className="rounded-lg object-contain"
+              className="rounded-lg object-contain bg-gray-100"
             />
           </div>
         </Link>

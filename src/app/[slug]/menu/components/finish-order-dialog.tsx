@@ -64,7 +64,7 @@ const FinishOrderDialog = ({ open, onOpenChange }: FinishOrderDialogProps) => {
   const { slug } = useParams<{ slug: string }>();
   const { products } = useContext(CartContext);
   const searchParams = useSearchParams();
-  const [isPending, startTransition] = useTransition()
+  const [isPending, startTransition] = useTransition();
 
   const form = useForm<FormSchema>({
     resolver: zodResolver(formSchema), //Usando o Schema para validar o formulário
@@ -91,7 +91,7 @@ const FinishOrderDialog = ({ open, onOpenChange }: FinishOrderDialogProps) => {
 
         onOpenChange(false);
         toast.success("Pedido finalizado com sucesso!");
-      })
+      });
     } catch (error) {
       console.error(error);
     }
@@ -102,9 +102,9 @@ const FinishOrderDialog = ({ open, onOpenChange }: FinishOrderDialogProps) => {
       <DrawerTrigger asChild></DrawerTrigger>
       <DrawerContent>
         <DrawerHeader>
-          <DrawerTitle>Finalizar o pedido</DrawerTitle>
+          <DrawerTitle>Quase lá!</DrawerTitle>
           <DrawerDescription>
-            Insira suas informações abaixo para finalizar o seu pedido.
+            Para finalizar o seu pedido, insira os seus dados abaixo.
           </DrawerDescription>
         </DrawerHeader>
         <div className="p-5">
@@ -118,7 +118,7 @@ const FinishOrderDialog = ({ open, onOpenChange }: FinishOrderDialogProps) => {
                   <FormItem>
                     <FormLabel>Seu nome</FormLabel>
                     <FormControl>
-                      <Input placeholder="Digite seu nome..." {...field} />
+                      <Input placeholder="Digite seu nome" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -133,7 +133,7 @@ const FinishOrderDialog = ({ open, onOpenChange }: FinishOrderDialogProps) => {
                     <FormLabel>Seu CPF</FormLabel>
                     <FormControl>
                       <PatternFormat
-                        placeholder="Digite seu CPF..."
+                        placeholder="Digite seu CPF"
                         format="###.###.###-##"
                         customInput={Input}
                         {...field}
@@ -150,7 +150,7 @@ const FinishOrderDialog = ({ open, onOpenChange }: FinishOrderDialogProps) => {
                   className="rounded-full"
                   disabled={isPending}
                 >
-                  {isPending && <Loader2Icon className="animate-spin"/>}
+                  {isPending && <Loader2Icon className="animate-spin" />}
                   Finalizar
                 </Button>
                 <DrawerClose asChild>
