@@ -16,7 +16,7 @@ const HomePage = () => {
         <h2 className="text-lg font-semibold">ou clique aqui ↓</h2>
         <div>
             <Link
-            href="https://fullstack-restaurant-two.vercel.app/fsw-donalds"
+            href="https://stephannica-fullstack-restaurant.vercel.app/fsw-donalds"
             className="inline-block rounded-full border border-gray-300 bg-white px-5 py-2.5 text-gray-900 transition hover:bg-gray-500 hover:text-white"
             >
             Acessar Restaurante
