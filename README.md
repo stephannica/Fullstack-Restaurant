@@ -20,7 +20,7 @@ O objetivo deste projeto foi ensinar, do zero, como criar um self-checkout semel
 
 <h2>🖥 Preview</h2>
 🚨 Este projeto está inicialmente em resolução para dispositivos móveis! <br>
-➡️ Confira o meu projeto acessando o <a href="https://fullstack-restaurant-two.vercel.app/fsw-donalds">link do vercel</a>.
+➡️ Confira o meu projeto acessando o <a href="https://stephannica-fullstack-restaurant.vercel.app/fsw-donalds">link do vercel</a>.
 
 <h2>✒️ Autores</h2>
 <li><a href="https://github.com/stephannica">Stephanni Cavalcante Rocha</a></li>
